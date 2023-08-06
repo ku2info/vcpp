@@ -32,7 +32,7 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	CListBox m_xcListCtrl;
+	CListCtrl m_listCtrl;
 	afx_msg void OnBnClickedFind();
 	afx_msg void OnBnClickedRadio1();
 	afx_msg void OnBnClickedRadio2();

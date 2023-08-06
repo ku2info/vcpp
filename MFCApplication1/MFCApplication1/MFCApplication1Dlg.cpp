@@ -60,7 +60,6 @@ CMFCApplication1Dlg::CMFCApplication1Dlg(CWnd* pParent /*=nullptr*/)
 void CMFCApplication1Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_LIST1, m_xcListCtrl);
 }
 
 BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
@@ -105,6 +104,22 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// 大きいアイコンの設定
 	SetIcon(m_hIcon, FALSE);		// 小さいアイコンの設定
 
+	// Attach the member variable to the dialog control
+	m_listCtrl.SubclassDlgItem(IDC_LIST1, this);
+
+	// Add columns to the list control
+	m_listCtrl.InsertColumn(0, _T("Column 1"), LVCFMT_LEFT, 150);
+	m_listCtrl.InsertColumn(1, _T("Column 2"), LVCFMT_LEFT, 150);
+
+	// Enable checkboxes in the list control
+	m_listCtrl.SetExtendedStyle(m_listCtrl.GetExtendedStyle() | LVS_EX_CHECKBOXES);
+
+	// Add some sample items to the list control
+	m_listCtrl.InsertItem(0, _T("Item 1"));
+	m_listCtrl.SetItemText(0, 1, _T("Description 1"));
+	m_listCtrl.InsertItem(1, _T("Item 2"));
+	m_listCtrl.SetItemText(1, 1, _T("Description 2"));
+	
 	return TRUE;  // フォーカスをコントロールに設定した場合を除き、TRUE を返します。
 }
 

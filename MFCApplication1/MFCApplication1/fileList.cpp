@@ -24,6 +24,7 @@ fileList::~fileList()
 void fileList::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIST1, m_listCtrl);
 }
 
 
