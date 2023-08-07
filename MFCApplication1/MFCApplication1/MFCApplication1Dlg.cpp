@@ -14,7 +14,7 @@
 #endif
 
 
-// アプリケーションのバージョン情報に使われる CAboutDlg ダイアログ
+	// アプリケーションのバージョン情報に使われる CAboutDlg ダイアログ
 
 class CAboutDlg : public CDialogEx
 {
@@ -112,7 +112,7 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 	m_listCtrl.InsertColumn(1, _T("Column 2"), LVCFMT_LEFT, 150);
 
 	// Enable checkboxes in the list control
-	m_listCtrl.SetExtendedStyle(m_listCtrl.GetExtendedStyle() | LVS_EX_CHECKBOXES);
+	m_listCtrl.SetExtendedStyle(m_listCtrl.GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
 
 	// Add some sample items to the list control
 	m_listCtrl.InsertItem(0, _T("Item 1"));
