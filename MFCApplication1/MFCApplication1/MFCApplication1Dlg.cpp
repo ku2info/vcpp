@@ -119,7 +119,9 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 	m_listCtrl.SetItemText(0, 1, _T("Description 1"));
 	m_listCtrl.InsertItem(1, _T("Item 2"));
 	m_listCtrl.SetItemText(1, 1, _T("Description 2"));
-	
+	m_listCtrl.InsertItem(2, _T("Item 3"));
+	m_listCtrl.SetItemText(2, 1, _T("Description 3"));
+
 	return TRUE;  // フォーカスをコントロールに設定した場合を除き、TRUE を返します。
 }
 
